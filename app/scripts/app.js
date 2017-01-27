@@ -1,8 +1,8 @@
 (function(){
     function config($stateProvider, $locationProvider) {
         
-        $locationProvicer
-            .html5mode({
+        $locationProvider
+            .html5Mode({
                 enabled: true,
                 requireBase: false
             
@@ -13,11 +13,12 @@
                 url: '/',
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
-        });
+        })
             
         
     }
+    
     angular
-        .module( 'blocChat', ['ui-router', 'firebase'])
-        
+        .module( 'bloc-chat', ['ui.router', 'firebase'])
+        .config(config)
 })();
