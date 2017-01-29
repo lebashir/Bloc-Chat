@@ -1,5 +1,6 @@
 <nav >
-    <h1 class="listTitle">Bloc Chat</h1>
+    <h1 class="listTitle">Bloc Chat<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="ModalCtrl.js">New Room</button></h1>
+    
     <ul class ="roomList">
         <li ng-repeat="room in home.rooms" >{{room.name}}</li>
     </ul>
