@@ -1,10 +1,8 @@
-<nav >
-    <h1 class="listTitle">Bloc Chat<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="ModalCtrl.js">New Room</button></h1>
-    
-    <ul class ="roomList">
-        <li ng-repeat="room in home.rooms" >{{room.name}}</li>
-    </ul>
-</nav>
-<div class="chatArea">
-
-</div>
+<section class="clearfix">
+    <h1>Bloc Chat</h1>
+        <button class="btn-sm btn-success" ng-click="open()">Add A New Chat Room</button>
+        
+         <div ng-repeat="room in rooms">
+             {{ room.$value }}
+         </div>
+</section>
