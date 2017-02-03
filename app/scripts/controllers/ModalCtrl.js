@@ -4,8 +4,8 @@
             $uibModalInstance.dismiss();
         };
 
-        this.submit = function () {
-            Room.add(this.newRoom);
+        this.ok = function (name) {
+            Room.add(name);
             $uibModalInstance.close();
         };
     }
