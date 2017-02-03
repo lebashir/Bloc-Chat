@@ -3,15 +3,18 @@
     <div class="roomList">
         <button class="addRoom" ng-click="home.open()">Add A New Chat Room</button>
         
-         <div ng-repeat="room in home.rooms">
-             <h4>{{room.name}}</h4>
+         <div ng-repeat="room in home.rooms" >
+             <h4 ng-click="home.setRoom(room)">{{room.name}}</h4>
          </div>
     </div>
 </section>
 <section>
-    <div class="messageArea"></div>
-    <div class="room-title">
-        <h1></h1>
-        <ng-include src="'/templates/messages.html'"></ng-include>
+    <div class="messageArea">
+        <h1>{{home.room.name}}</h1>
+        <p ng-repeat="message in home.messages">{{message.content}}</p>
     </div>
+    
+        
+        <ng-include src="'/templates/messages.html'"></ng-include>
+    
 </section>
