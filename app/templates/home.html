@@ -1,20 +1,36 @@
 <section class="navbar">
     <h1 class="title">Bloc Chat</h1>
     <div class="roomList">
-        <button class="addRoom" ng-click="home.open()">Add A New Chat Room</button>
+        <button class="addRoom btn btn-primary" ng-click="home.open()">Add A New Chat Room</button>
         
          <div ng-repeat="room in home.rooms" >
              <h4 ng-click="home.setRoom(room)">{{room.name}}</h4>
          </div>
     </div>
 </section>
-<section>
-    <div class="messageArea">
-        <h1>{{home.room.name}}</h1>
-        <p ng-repeat="message in home.messages">{{message.content}}</p>
-    </div>
+
+<section class = "chatroom">
     
+        <h1 class ="room-title">{{home.room.name}}</h1>
+        <ul class="messages" ng-repeat="message in home.messages">
+            <div>
+            <small class="username">{{message.username}}</small>: <small>{{message.content}}</small><small class="message-info">{{message.sentAt}}</small>
+            </div>
+        </ul>
+        <div class="message-field">
+            <input type="text"  placeholder="Type your message here" class="message-box" ng-model="messages.content" style="width:400px;">
+            /*
+/*class of message box, what goes into the small {{}}, ask jose. also ask about message-box css */
+*/
+
+      
+      <button class="btn-new-message" type="button" ng-click="">Send</button>
+        </div>
         
-        <ng-include src="'/templates/messages.html'"></ng-include>
+        <ng-include src="'/templates/messages.html'"></ng-include>  
+    
+    /* I dont need this anymore should i delete here or keep template */
     
 </section>
+
+

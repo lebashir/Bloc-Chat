@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3 class="modal-title text-center">Welcome To Bloc Chat</h3>
+</div>
+<div class="modal-body">
+    <div class="form-group modal-input">
+        <label for="newChatRoomName">Enter Username:</label>
+        <input id="newChatRoomName" type="text" ng-model="text">
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-disabled="text === ''" ng-click="modal.createUserName(text)">Set New User</button>
+    <button class="btn" type="button" ng-click="modal.cancel()">Cancel</button>
+</div>

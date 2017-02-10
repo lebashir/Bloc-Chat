@@ -1,5 +1,5 @@
 (function() {
-    function ModalCtrl(Room, $uibModalInstance) {
+    function ModalCtrl(Room, $uibModalInstance, $cookies) {
         
         
         
@@ -7,13 +7,18 @@
             $uibModalInstance.dismiss();
         };
 
-        this.ok = function (roomName) {
+        this.ok= function (roomName) {
             Room.add(roomName);
+            $uibModalInstance.close();
+        };
+        
+        this.createUserName = function (newUser) {
+            $cookies.put('blocChatCurrentUser', newUser);
             $uibModalInstance.close();
         };
     }
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['Room', '$uibModalInstance', ModalCtrl]);
+        .controller('ModalCtrl', ['Room', '$uibModalInstance', '$cookies', ModalCtrl]);
 })();

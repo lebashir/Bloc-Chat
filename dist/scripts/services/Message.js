@@ -10,6 +10,7 @@
         
          
         return {
+            
             getMessagesFor: function(id){
                 return $firebaseArray(ref.orderByChild('roomId').equalTo(id));
             }
