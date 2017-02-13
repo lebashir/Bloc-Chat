@@ -13,7 +13,7 @@
         };
         
         this.createUserName = function (newUser) {
-            $cookies.put('blocChatCurrentUser', newUser);
+            $cookies.put('currentUser', newUser);
             $uibModalInstance.close();
         };
     }

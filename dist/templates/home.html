@@ -18,13 +18,13 @@
             </div>
         </ul>
         <div class="message-field">
-            <input type="text"  placeholder="Type your message here" class="message-box" ng-model="messages.content" style="width:400px;">
+            <input type="text"  placeholder="Type your message here" class="message-box" ng-model="home.message" style="width:400px;">
             /*
 /*class of message box, what goes into the small {{}}, ask jose. also ask about message-box css */
 */
 
       
-      <button class="btn-new-message" type="button" ng-click="">Send</button>
+      <button class="btn-new-message" type="button" ng-click="home.sendMessage(home.message)">Send</button>
         </div>
         
         <ng-include src="'/templates/messages.html'"></ng-include>  
